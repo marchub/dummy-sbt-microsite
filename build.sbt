@@ -5,6 +5,7 @@ scalaVersion := "2.11.8"
 micrositeName := "Typelevel"
 micrositeDescription := "Cats"
 micrositeHighlightTheme := "atom-one-light"
+micrositeExtratMdFiles := Seq(file("CONTRIBUTING.md"))
 micrositePalette := Map(
   "brand-primary"     -> "#FC4053",
   "brand-secondary"   -> "#B92239",
