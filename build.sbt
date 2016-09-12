@@ -4,7 +4,7 @@ scalaVersion := "2.11.8"
 crossScalaVersions := Seq("2.10.6", "2.11.8")
 
 micrositeName := "Microsite Demo"
-micrositeDescription := "How to use sbt-microsites plugin"
+micrositeDescription := "How to use the sbt-microsites plugin"
 micrositeHighlightTheme := "atom-one-light"
 micrositeDocumentationUrl := "docs.html"
 micrositeBaseUrl := "dummy-sbt-microsite"
