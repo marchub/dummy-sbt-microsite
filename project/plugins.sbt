@@ -1,1 +1,2 @@
-addSbtPlugin("com.fortysevendeg"  % "sbt-microsites" % "0.1.1-SNAPSHOT")
+resolvers += Resolver.sonatypeRepo("snapshots")
+addSbtPlugin("com.fortysevendeg"  % "sbt-microsites" % "0.1.0-SNAPSHOT")
