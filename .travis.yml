@@ -11,4 +11,4 @@ install:
   - gem install jekyll -v 2.5
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION "clean" "makeMicrosite"
+  - sbt ++$TRAVIS_SCALA_VERSION "makeMicrosite"
