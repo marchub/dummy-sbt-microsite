@@ -7,7 +7,10 @@ micrositeName := "Typelevel"
 micrositeDescription := "Cats"
 micrositeHighlightTheme := "atom-one-light"
 micrositeDocumentationUrl := "docs.html"
-micrositeBaseUrl := "cattts"
+micrositeBaseUrl := "dummy-sbt-microsite"
+
+micrositeGithubOwner := "47deg"
+micrositeGithubRepo := "dummy-sbt-microsite"
 
 micrositeExtratMdFiles := Map(file("CONTRIBUTING.md") -> "contributing.md")
 micrositePalette := Map(
