@@ -1,6 +1,7 @@
 language: scala
 
 scala:
+- 2.10.6
 - 2.11.8
 
 install: gem install jekyll -v 2.5
