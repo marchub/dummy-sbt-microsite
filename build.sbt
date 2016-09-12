@@ -9,7 +9,6 @@ micrositeHighlightTheme := "atom-one-light"
 micrositeDocumentationUrl := "docs.html"
 micrositeBaseUrl := "cattts"
 
-includeFilter in makeSite := "*.html" & "*.swf" & "*.yml"
 micrositeExtratMdFiles := Map(file("CONTRIBUTING.md") -> "contributing.md")
 micrositePalette := Map(
   "brand-primary"     -> "#FC4053",
@@ -20,5 +19,7 @@ micrositePalette := Map(
   "gray-light"        -> "#E8E8E8",
   "gray-lighter"      -> "#F6F6F6",
   "white-color"       -> "#FFFFFF")
+
+autoAPIMappings := true
 
 enablePlugins(MicrositesPlugin)
