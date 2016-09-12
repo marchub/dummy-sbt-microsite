@@ -5,7 +5,11 @@ scalaVersion := "2.11.8"
 micrositeName := "Typelevel"
 micrositeDescription := "Cats"
 micrositeHighlightTheme := "atom-one-light"
-micrositeExtratMdFiles := Seq(file("CONTRIBUTING.md"))
+micrositeDocumentationUrl := "docs.html"
+micrositeBaseUrl := "cattts"
+
+includeFilter in makeSite := "*.html" & "*.swf" & "*.yml"
+micrositeExtratMdFiles := Map(file("CONTRIBUTING.md") -> "contributing.md")
 micrositePalette := Map(
   "brand-primary"     -> "#FC4053",
   "brand-secondary"   -> "#B92239",

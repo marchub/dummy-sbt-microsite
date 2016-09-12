@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: page
 title:  "Contributing"
 section: "contributing"
+position: 4
 ---
 
 # Contributor guide
