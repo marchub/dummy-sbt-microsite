@@ -1,0 +1,77 @@
+<html><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>Typelevel</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Cats" /><meta name="author" content="dummy" /><meta name="og:image" content="/cattts/img/poster.png" /><meta name="og:title" content="Typelevel" /><meta name="og:site_name" content="Typelevel" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Cats" /><meta name="twitter:image" content="/cattts/img/poster.png" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="" /><link rel="icon" type="image/png" href="/cattts/img/favicon.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/atom-one-light.min.css" /><link rel="stylesheet" href="/cattts/css/style.css" /><link rel="stylesheet" href="/cattts/css/palette.css" /><link rel="stylesheet" href="/cattts/css/override.css" /></head><body class="docs"><div id="wrapper"><div id="sidebar-wrapper"><ul id="sidebar" class="sidebar-nav"><li class="sidebar-brand"><a href="/cattts/" class="brand"><div class="brand-wrapper" style="background:url('/cattts/img/sidebar_brand.png') no-repeat"><span>Typelevel</span></div></a></li>     <li><a href="/cattts/datatypes/const.html" class="">Const</a></li>    <li><a href="/cattts/datatypes.html" class="">Data Types</a></li>    <li><a href="/cattts/datatypes/either.html" class=" active ">Either</a></li>             </ul></div><div id="page-content-wrapper"><div class="nav"><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="action-menu pull-left clearfix"><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a></div><ul class="pull-right"><li class="hidden-xs"><a href="https://github.com/47deg/dummy-sbt-microsite"><i class="fa fa-eye"></i><span>WATCH<span id="eyes" class="label label-default">--</span></span></a></li><li class="hidden-xs"><a href="https://github.com/47deg/dummy-sbt-microsite"><i class="fa fa-star-o"></i><span>STARS<span id="stars" class="label label-default">--</span></span></a></li><li><a href="#" onclick="shareSiteTwitter('Typelevel Cats');"><i class="fa fa-twitter"></i></a></li><li><a href="#" onclick="shareSiteFacebook('Typelevel Cats');"><i class="fa fa-facebook"></i></a></li><li><a href="#" onclick="shareSiteGoogle();"><i class="fa fa-google-plus"></i></a></li></ul></div></div></div></div><div id="content" data-github-owner="47deg" data-github-repo="dummy-sbt-microsite"><div class="content-wrapper"><section><h1 id="either">Either</h1>
+
+<p>In day-to-day programming, it is fairly common to find ourselves writing functions that
+can fail. For instance, querying a service may result in a connection issue, or some
+unexpected JSON response.</p>
+
+<p>To communicate these errors it has become common practice to throw exceptions. However,
+exceptions are not tracked in any way, shape, or form by the Scala compiler. To see
+what kind of exceptions (if any) a function may throw, we have to dig through the source code.
+Then to handle these exceptions, we have to make sure we catch them at the call site.
+This all becomes even more unwieldy when we try to compose exception-throwing procedures.</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">throwsSomeStuff</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Double</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="k">val</span> <span class="n">throwsOtherThings</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=&gt;</span> <span class="nc">String</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="k">val</span> <span class="n">moreThrowing</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Char</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="k">val</span> <span class="n">magic</span> <span class="k">=</span> <span class="n">throwsSomeStuff</span><span class="o">.</span><span class="n">andThen</span><span class="o">(</span><span class="n">throwsOtherThings</span><span class="o">).</span><span class="n">andThen</span><span class="o">(</span><span class="n">moreThrowing</span><span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Assume we happily throw exceptions in our code. Looking at the types, any of those functions
+can throw any number of exceptions, we don’t know. When we compose, exceptions from any of
+the constituent functions can be thrown. Moreover, they may throw the same kind of exception
+(e.g. <code class="highlighter-rouge">IllegalArgumentException</code>) and thus it gets tricky tracking exactly where that
+exception came from.</p>
+
+<p>How then do we communicate an error? By making it explicit in the data type we return.</p>
+
+<h2 id="either-1">Either</h2>
+
+<h3 id="either-vs-validated"><code class="highlighter-rouge">Either</code> vs <code class="highlighter-rouge">Validated</code></h3>
+
+<p>In general, <code class="highlighter-rouge">Validated</code> is used to accumulate errors, while <code class="highlighter-rouge">Either</code> is used to short-circuit a computation upon the first error. For more information, see the <code class="highlighter-rouge">Validated</code> vs <code class="highlighter-rouge">Either</code> section of the <a href="/cattts/tut/validated.html"><code class="highlighter-rouge">Validated</code> documentation</a>.</p>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>In Scala 2.10.x and 2.11.x, <code class="highlighter-rouge">Either</code> is unbiased. That is, usual combinators like <code class="highlighter-rouge">flatMap</code> and <code class="highlighter-rouge">map</code>
+are missing from it. Instead, you call <code class="highlighter-rouge">.right</code> or <code class="highlighter-rouge">.left</code> to get a <code class="highlighter-rouge">RightProjection</code> or
+<code class="highlighter-rouge">LeftProjection</code> (respectively) which does have the combinators. The direction of the projection indicates the direction
+of bias. For instance, calling <code class="highlighter-rouge">map</code> on a <code class="highlighter-rouge">RightProjection</code> acts on the <code class="highlighter-rouge">Right</code> of an <code class="highlighter-rouge">Either</code>.</p>
+
+<div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">e1</span><span class="k">:</span> <span class="kt">Either</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Right</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+<span class="c1">// e1: Either[String,Int] = Right(5)
+</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+<span class="c1">// res0: Product with Serializable with scala.util.Either[String,Int] = Right(6)
+</span>
+<span class="k">val</span> <span class="n">e2</span><span class="k">:</span> <span class="kt">Either</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Left</span><span class="o">(</span><span class="s">"hello"</span><span class="o">)</span>
+<span class="c1">// e2: Either[String,Int] = Left(hello)
+</span>
+<span class="n">e2</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+<span class="c1">// res1: Product with Serializable with scala.util.Either[String,Int] = Left(hello)
+</span></code></pre>
+</div>
+
+<p>Note the return types are themselves back to <code class="highlighter-rouge">Either</code>, so if we want to make more calls to
+<code class="highlighter-rouge">flatMap</code> or <code class="highlighter-rouge">map</code> then we again must call <code class="highlighter-rouge">right</code> or <code class="highlighter-rouge">left</code>.</p>
+
+<p>However, the convention is almost always to right-bias <code class="highlighter-rouge">Either</code>. Indeed in Scala 2.12.x <code class="highlighter-rouge">Either</code> will be
+<a href="https://github.com/scala/scala/pull/5135">right-biased</a> by default.</p>
+
+<p>More often than not we want to just bias towards one side and call it a day - by convention,
+the right side is most often chosen. In Scala 2.12.x this convention
+<a href="https://github.com/scala/scala/pull/5135">is implemented</a>
+in the standard library. Since Cats builds on 2.10.x and 2.11.x, the gaps have been filled via syntax
+enrichments available under <code class="highlighter-rouge">cats.syntax.either._</code> or <code class="highlighter-rouge">cats.implicits._</code>.</p>
+
+<p>For the rest of this tutorial we will assume the syntax enrichment is in scope giving us right-biased <code class="highlighter-rouge">Either</code>
+and a bunch of other useful combinators (both on <code class="highlighter-rouge">Either</code> and the companion object).</p>
+
+<p>Because <code class="highlighter-rouge">Either</code> is right-biased, it is possible to define a <code class="highlighter-rouge">Monad</code> instance for it.
+Since we only ever want the computation to continue in the case of <code class="highlighter-rouge">Right</code>, we fix the left type parameter
+and leave the right one free.</p>
+
+</section></div></div></div></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/scala.min.js"></script><script src="/cattts/js/main.js"></script></body></html>

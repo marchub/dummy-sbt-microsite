@@ -1,0 +1,35 @@
+<html><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>Typelevel</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Cats" /><meta name="author" content="dummy" /><meta name="og:image" content="/cattts/img/poster.png" /><meta name="og:title" content="Typelevel" /><meta name="og:site_name" content="Typelevel" /><meta name="og:url" content="" /><meta name="og:type" content="website" /><meta name="og:description" content="Cats" /><meta name="twitter:image" content="/cattts/img/poster.png" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="" /><link rel="icon" type="image/png" href="/cattts/img/favicon.png" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/atom-one-light.min.css" /><link rel="stylesheet" href="/cattts/css/style.css" /><link rel="stylesheet" href="/cattts/css/palette.css" /><link rel="stylesheet" href="/cattts/css/override.css" /></head><body><header id="site-header"><div class="navbar-wrapper navbar-inverse"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/cattts/" class="brand"><div class="icon-wrapper" style="background:url('/cattts/img/navbar_brand.png') no-repeat"><span>Typelevel</span></div></a></div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav navbar-right"><li><a href="https://github.com/47deg/dummy-sbt-microsite"><span>GitHub</span></a></li><li><a href="docs.html"><span>Documentation</span></a></li></ul></div></div></div><div class="jumbotron" style="background-image:url('/cattts/img/jumbotron_pattern.png')"></div><div><ul class="horizontalNav">                   <li><a class="" href="/cattts/typeclasses.html">Type Classes</a></li>  <li><a class="" href="/cattts/datatypes.html">Data Types</a></li>  <li><a class=" active " href="/cattts/faq.html">FAQ</a></li>  <li><a class="" href="/cattts/contributing.html">Contributing</a></li> </ul></div></header><main id="site-main"><section class="use"><div class="container"><div id="content"><h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+
+<h2 id="questions">Questions</h2>
+
+<ul>
+  <li><a href="#what-imports">What imports do I need?</a></li>
+  <li><a href="#either">Where is right-biased <code class="highlighter-rouge">Either</code>?</a></li>
+  <li><a href="#future-instances">Why can’t the compiler find implicit instances for Future?</a></li>
+  <li><a href="#traverse">How can I turn my List of <code class="highlighter-rouge">&lt;something&gt;</code> into a <code class="highlighter-rouge">&lt;something&gt;</code> of a list?</a></li>
+  <li><a href="#listt">Where is <code class="highlighter-rouge">ListT</code>?</a></li>
+  <li><a href="#task">Where is <code class="highlighter-rouge">IO</code>/<code class="highlighter-rouge">Task</code>?</a></li>
+  <li><a href="#simulacrum">What does <code class="highlighter-rouge">@typeclass</code> mean?</a></li>
+  <li><a href="#kind-projector">What do types like <code class="highlighter-rouge">?</code> and <code class="highlighter-rouge">λ</code> mean?</a></li>
+  <li><a href="#machinist">What does <code class="highlighter-rouge">macro Ops</code> do? What is <code class="highlighter-rouge">cats.macros.Ops</code>?</a></li>
+  <li><a href="#contributing">How can I help?</a></li>
+</ul>
+
+<h2 id="a-idwhat-imports-hrefwhat-importsawhat-imports-do-i-need"><a id="what-imports" href="#what-imports"></a>What imports do I need?</h2>
+
+<p>The easiest approach to cats imports is to import everything that’s commonly needed:</p>
+
+<p>This should be all that you need, but if you’d like to learn more about the details of imports than you can check out the <a href="imports.html">import guide</a>.</p>
+
+<h2 id="a-ideither-hrefeitherawhere-is-right-biased-either"><a id="either" href="#either"></a>Where is right-biased Either?</h2>
+<p>Up to Cats 0.6.x we had <code class="highlighter-rouge">cats.data.Xor</code> which was effectively <code class="highlighter-rouge">scala.util.Either</code>, but right-biased by default and with
+a bunch of useful combinators around it. In Scala 2.12.x <code class="highlighter-rouge">Either</code>
+<a href="https://github.com/scala/scala/pull/5135">became right-biased</a> so we revisited the use of <code class="highlighter-rouge">Xor</code> and
+<a href="https://github.com/typelevel/cats/issues/1192">decided</a> that in the interest of interoperability we move to
+<code class="highlighter-rouge">scala.util.Either</code> and fill in the gaps via
+<a href="https://github.com/typelevel/cats/blob/master/core/src/main/scala/cats/syntax/either.scala">syntax enrichment</a>.</p>
+
+<p>This syntax can be imported via <code class="highlighter-rouge">cats.syntax.either._</code> or through <code class="highlighter-rouge">cats.implicits._</code>.</p>
+
+<p>Similarly, <code class="highlighter-rouge">cats.data.XorT</code> has been replaced with <code class="highlighter-rouge">cats.data.EitherT</code>.</p>
+</div></div></section></main><footer id="site-footer"><div class="container"><div class="row"><div class="col-xs-6"><p>Typelevel is designed and developed by <a href="" target="_blank">dummy</a></p></div><div class="col-xs-6"><p class="text-right"><a href="https://github.com/47deg/dummy-sbt-microsite"><span class="fa fa-github"></span>View on Github</a></p></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/scala.min.js"></script><script>jQuery(document).ready(function(){hljs.initHighlightingOnLoad();});</script></body></html>
