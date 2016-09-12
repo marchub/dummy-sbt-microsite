@@ -1,8 +1,14 @@
 language: scala
 
 scala:
+- 2.10.6
 - 2.11.8
 
-install: gem install jekyll -v 2.5
+before_install:
+ - export PATH=${PATH}:./vendor/bundle
 
-sudo: false # route your build to the container-based infrastructure for a faster build
+install:
+  - gem install jekyll -v 2.5
+
+script:
+  - sbt ++$TRAVIS_SCALA_VERSION "clean" "makeMicrosite"
