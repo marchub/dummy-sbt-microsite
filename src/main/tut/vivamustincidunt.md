@@ -1,10 +1,10 @@
 ---
 layout: docs
-title:  "Data Types"
+title:  "Vivamus tincidunt"
 section: "data"
 position: 2
 ---
-# Data Types
+# Vivamus Tincidunt
 
 
 {% for x in site.pages %}

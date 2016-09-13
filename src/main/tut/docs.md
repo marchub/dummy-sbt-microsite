@@ -4,67 +4,30 @@ layout: docs
 
 # Introduction
 
-Fetch is a library that allows your data fetches to be written in a concise,
-composable way while executing efficiently. You don't need to use any explicit
-concurrency construct but existing idioms: applicative for concurrency and
-monad for sequencing.
+Maecenas euismod, ex a mattis ultricies, libero est pulvinar lectus, quis mattis dui turpis id elit. Phasellus vestibulum purus semper, aliquam leo non, pellentesque purus. Donec bibendum felis a accumsan tempus. Phasellus dictum est metus, vitae placerat nulla feugiat vitae. Sed sollicitudin libero arcu, non sollicitudin risus ornare at. Cras id leo interdum, laoreet justo a, condimentum dolor. Donec mollis ultrices quam. Quisque volutpat velit tellus, vitae tincidunt enim efficitur vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
-Oftentimes, our applications read and manipulate data from a variety of
-different sources such as databases, web services or file systems. These data
-sources are subject to latency, and we'd prefer to query them efficiently.
-
-If we are just reading data, we can make a series of optimizations such as:
-
- - batching requests to the same data source
- - requesting independent data from different sources in parallel
- - caching previously seen results
-
-However, if we mix these optimizations with the code that fetches the data
-we may end up trading clarity for performance. Furthermore, we are
-mixing low-level (optimization) and high-level (business logic with the data
-we read) concerns.
+Aliquam blandit magna et leo iaculis, placerat dapibus ante rutrum. In tempus risus quis aliquam rhoncus. Nullam viverra leo eu lacinia condimentum. Sed mattis est at magna accumsan, suscipit vestibulum mauris malesuada. Curabitur pretium a elit sit amet porta. In sed orci purus. Aenean malesuada metus lorem, dictum sollicitudin nulla commodo nec. Proin feugiat eros tortor, at malesuada nibh fermentum vel. Aliquam consequat nibh vitae nisi cursus auctor. Aenean sodales a nunc a interdum.
 
 # Installation
 
-To begin, add the following dependency to your SBT build file:
+Aenean vitae dignissim sapien. Sed dolor felis, ultricies ornare nisi vitae, viverra pharetra diam. In hac habitasse platea dictumst. Pellentesque rhoncus facilisis mauris, ac pharetra mauris suscipit non. Vestibulum pretium id neque sed ornare. Duis maximus placerat quam, sit amet hendrerit ex vestibulum vel. Suspendisse lobortis facilisis enim a sagittis. Suspendisse et massa vitae purus fringilla ullamcorper. Praesent facilisis feugiat mauris, eget efficitur ipsum rhoncus vitae. Aenean facilisis in metus ac vulputate. Sed ullamcorper turpis sed nibh placerat ullamcorper. Integer accumsan ornare tellus, eu pharetra purus maximus nec. Cras molestie gravida turpis non consectetur.
 
 ```scala
-"com.fortysevendeg" %% "fetch" % "0.3.0-SNAPSHOT"
+addSbtPlugin("com.fortysevendeg"  % "sbt-microsites" % "0.1.0")
 ```
-
-Or, if using Scala.js:
-
-```scala
-"com.fortysevendeg" %%% "fetch" % "0.3.0-SNAPSHOT"
-```
-
-Now you'll have Fetch available in both Scala and Scala.js.
-
-```tut:invisible
-val out = Console.out
-
-def println(msg: String): Unit = {
-  Console.withOut(out) {
-    Console.println(msg)
-  }
-}
-```
-
-
 
 # Resources
 
-- [Code](https://github.com/47deg/fetch) on GitHub.
-- [Documentation site](http://47deg.github.io/fetch/)
-- [Fetch: Simple & Efficient data access](https://www.youtube.com/watch?v=45fcKYFb0EU) talk at [Typelevel Summit in Oslo](http://typelevel.org/event/2016-05-summit-oslo/)
+- [Code](https://github.com/47deg/sbt-microsites) on GitHub.
+- [Documentation site](http://47deg.github.io/sbt-microsite/)
 
 # Acknowledgements
 
-Fetch stands on the shoulders of giants:
-
-- [Haxl](https://github.com/facebook/haxl) is Facebook's implementation (Haskell) of the [original paper Fetch is based on](http://community.haskell.org/~simonmar/papers/haxl-icfp14.pdf).
-- [Clump](http://getclump.io) has inspired the signature of the `DataSource#fetch` method.
-- [Stitch](https://engineering.twitter.com/university/videos/introducing-stitch) is an in-house Twitter library that is not open source but has inspired Fetch's high-level API.
-- [Cats](http://typelevel.org/cats/), a library for functional programming in Scala.
-- [Monix](https://monix.io) high-performance and multiplatform (Scala / Scala.js) asynchronous programming library.
-
+* [tut-plugin](https://github.com/tpolecat/tut)
+* [sbt-site](https://github.com/sbt/sbt-site)
+* [sbt-ghpages](https://github.com/sbt/sbt-ghpages)
+* [scalatags](https://github.com/lihaoyi/scalatags)
+* [sbt-native-packager](https://github.com/sbt/sbt-native-packager)
+* [sbt-scalafmt](https://github.com/olafurpg/scalafmt)
+* [sbt-pgp](https://github.com/sbt/sbt-pgp)
+* [sbt-header](https://github.com/sbt/sbt-header)
