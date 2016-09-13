@@ -6,13 +6,13 @@ crossScalaVersions := Seq("2.10.6", "2.11.8")
 micrositeName := "Microsite Demo"
 micrositeDescription := "How to use the sbt-microsites plugin"
 micrositeHighlightTheme := "atom-one-light"
-micrositeDocumentationUrl := "docs.html"
+micrositeDocumentationUrl := "/dummy-sbt-microsite/docs/0_introduction.html"
 micrositeBaseUrl := "dummy-sbt-microsite"
 
 micrositeGithubOwner := "47deg"
 micrositeGithubRepo := "dummy-sbt-microsite"
 
-micrositeExtratMdFiles := Map(file("CONTRIBUTING.md") -> "contributing.md")
+micrositeExtratMdFiles := Map(file("CONSEQUAT.md") -> "consequat.md")
 micrositePalette := Map(
   "brand-primary"     -> "#FC4053",
   "brand-secondary"   -> "#B92239",

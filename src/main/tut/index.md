@@ -1,106 +1,58 @@
 ---
 layout: home
 technologies:
- - scala: ["Scala", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
- - android: ["Android", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
- - database: ["Database", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
+ - nulla: ["Nulla", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
+ - donec: ["Donec", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
+ - duis: ["Duis", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
 ---
 
-Cats is a library which provides abstractions for functional
-programming in the [Scala programming language](https://scala-lang.org).
-The name is a playful shortening of the word *category*.
+> This project it's just a dummy example using [sbt-microsites](https://github.com/47deg/sbt-microsites) plugin. All the contents have been randmly generated for demo purposes.
 
-<div class="msg warn"> <p><strong> Cats is a new project under active
-  development</strong>. Feedback and contributions are welcomed as we look
-  to improve it. This project is evolving quickly and we are making no
-  guarantees about stability until a 1.0 release is made (current est.
-  around Q3 2016).</p> </div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ac eros at pellentesque. Curabitur suscipit sagittis urna, et congue mi faucibus in. Nulla nulla lectus, fringilla vitae auctor in, dignissim et nisl. Nullam vitae nulla a velit consequat porta vitae non magna. Vivamus efficitur, nibh nec aliquet pretium, sapien turpis ultrices lacus, sit amet viverra justo eros id turpis. Duis interdum, felis nec gravida dapibus, augue ante vestibulum dui, a venenatis nunc velit ac ex. Vestibulum eget elit a tellus mollis vehicula. Nunc vulputate, lorem id rhoncus tristique, nunc justo placerat sem, non congue dui tellus non ipsum. Donec ut finibus ligula, vel condimentum enim.
+
+```
+Nullam vitae nulla a velit consequat porta vitae non magna.
+Vivamus efficitur, nibh nec aliquet pretium, sapien turpis ultrices lacus, sit amet viverra justo eros id turpis.
+Duis interdum, felis nec gravida dapibus, augue ante vestibulum dui, a venenatis nunc velit ac ex.
+```
+
+<div class="msg warn"> <p><strong>Phasellus dapibus condimentum vehicula</strong>. Nulla accumsan enim sed finibus pretium. Integer vulputate pharetra sapien, et finibus mauris pellentesque dapibus. In hendrerit, augue dictum aliquet auctor, tortor justo tempor neque, eu porttitor elit orci at mauris. Aenean laoreet massa nisi, nec bibendum diam varius vitae. </p> </div>
 
 
 <a name="getting-started"></a>
 # Getting Started
 
-Cats is currently available for Scala 2.10 and 2.11.
+Nunc volutpat efficitur vestibulum. Donec quis auctor mauris. Sed eu semper leo. Suspendisse sodales et elit a maximus. Donec posuere vestibulum ullamcorper. Duis in mauris interdum, facilisis nisl viverra, semper libero. Ut iaculis pretium mi, sed pulvinar elit porta sed. Fusce volutpat tortor sit amet lectus semper, eget pulvinar eros pretium. Aenean consectetur, erat vitae sodales maximus, libero nulla congue nunc, eget scelerisque nisl nulla quis dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec in ipsum ullamcorper, mattis odio vitae, fringilla orci. Pellentesque ut libero nisi. Duis vulputate, velit vitae facilisis sagittis, metus orci dapibus sapien, quis congue velit ante quis lectus. Donec efficitur risus ac orci ultrices rhoncus. Fusce eleifend lobortis felis, quis tristique mauris volutpat ut. Quisque volutpat velit massa, ultricies ornare odio volutpat vel.
 
-To get started with SBT, simply add the following to your build.sbt file:
+    libraryDependencies += "org.loremipsum" %% "lorem-ipsum" % "1.0.0"
 
-    libraryDependencies += "org.typelevel" %% "cats" % "0.7.0"
+Nulla facilisi. Cras vitae commodo urna, vitae scelerisque neque. Duis non odio at elit bibendum feugiat. Quisque mi ipsum, ultrices vel purus sed, condimentum tempor velit. Nulla facilisi. Donec ex mi, tincidunt a ullamcorper ac, venenatis vel orci. Mauris at tortor ut neque mattis porta. Quisque sit amet odio erat. Morbi vulputate, velit in malesuada consequat, neque lacus imperdiet mi, nec iaculis arcu `nisl quis ipsum`.
 
-This will pull in all of Cats' modules. If you only require some
-functionality, you can pick-and-choose from amongst these modules
-(used in place of `"cats"`):
+ * `Proin`: in pellentesque orci tincidunt nec.
+ * `pharetra`: Etiam vitae suscipit nisl (*pellentesque*).
+ * `sapien`: sit amet congue ipsum.
+ * `lacus`: Integer pulvinar interdum nulla.
+ * `in`: in lobortis mauris fermentum sed.
 
- * `cats-macros`: Macros used by Cats syntax (*required*).
- * `cats-kernel`: Small set of basic type classes (*required*).
- * `cats-core`: Most core type classes and functionality (*required*).
- * `cats-laws`: Laws for testing type class instances.
- * `cats-free`: Free structures such as the free monad, and supporting type classes.
+Sed luctus pretium turpis vitae maximus [sbt-microsites](https://github.com/47deg/sbt-microsites).
 
-Release notes for Cats are available in [CHANGES.md](https://github.com/typelevel/cats/blob/master/CHANGES.md).
+# Motivation
 
-<a name "motivations"></a>
-# Motivations
-
-### Approachability
-
-As this library evolves, we are placing a lot of emphasis on trying to
-make decisions which will help keep this library approachable for
-people new to the concepts in this library. We are collecting
-anecdotes from successes and failures we have experienced in the past
-in trying to teach others about these concepts, and trying to make
-decisions which will help ease the process of getting acquainted to
-the library for a newcomer. If you have any feedback for us in this
-regard, we would love to hear from you. See the [Contributing
-page](contributing.html) to find out ways to give us feedback.
-
-### Modularity
-
-We are trying to make the library modular. It will have a tight
-core which will contain only the [type classes](typeclasses.html),
-the bare minimum of data structures that are needed to support
-them, and type class instances for those data structures and standard
-library types.
-
-### Documentation
-
-We feel that having lots of documentation is a very important goal for
-our project. It will be a big win towards our goal of
-approachability. We will strive to have the code well documented, we
-will strive to have lots of documentation external to the code, and we
-will strive to have a large corpus of compiler verified examples of
-how the software can be used.
-
-Writing documentation is a huge part of developing software, and one
-that is often neglected. It is also a very easy way to get started
-with [contributing](contributing.html) to the project
-
-### Efficiency
-
-Although unfortunately there are times when programming only with
-pure functions and writing efficient code in Scala can be at odds, we
-are attempting to do our best at keeping our library as efficient as
-we can without making unnecessary sacrifices of purity and
-usability. Where sacrifices have to be made, we will strive to make
-these obvious, and will keep them well documented.
-
-<a name="project-structure"></a>
-# Project Structure
-
-In an attempt to be more modular, Cats is broken up into a number of sub-projects:
-
-* *core* - contains type class definitions (e.g. Functor, Applicative, Monad), essential datatypes, and
-  type class instances for those datatypes and standard library types
-* *laws* - laws for the type classes, used to validate type class instances
-* *cats-free* - free structures such as the free monad, and supporting type classes.
-* *tests* - tests that check type class instances with laws from *laws*
-* *docs* - The source for this website
+Fusce nisl lorem, euismod ac pulvinar non, euismod vel eros. Aliquam ut pulvinar nunc, ut aliquam risus. Nullam hendrerit risus a diam tempor cursus. Ut id placerat libero, in molestie elit. Suspendisse sed ornare velit. Maecenas facilisis enim in magna hendrerit semper. Aliquam dignissim cursus quam eu interdum. Ut orci lorem, placerat at pharetra eu, efficitur et felis. Ut mattis fringilla odio in laoreet. Nulla vitae lectus non neque euismod suscipit nec vel magna. In sit amet lorem ac nisi congue sollicitudin ut at nunc.
 
 <a name="copyright"></a>
 # Copyright and License
 
-All code is available to you under the MIT license, available at
-http://opensource.org/licenses/mit-license.php and also in the
-[COPYING](https://raw.githubusercontent.com/typelevel/cats/master/COPYING) file. The design is informed by many other
-projects, in particular Scalaz.
+Copyright 2016 47 Degrees, LLC. <http://www.47deg.com>
 
-Copyright the maintainers, 2016.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
