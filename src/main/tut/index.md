@@ -6,7 +6,7 @@ technologies:
  - duis: ["Duis", "Lorem ipsum dolor sit amet, conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolo…"]
 ---
 
-This project it's just a dummy example using [sbt-microsites](https://github.com/47deg/sbt-microsites) plugin. All the contents have been randmly generated for demo purposes.
+> This project it's just a dummy example using [sbt-microsites](https://github.com/47deg/sbt-microsites) plugin. All the contents have been randmly generated for demo purposes.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rutrum ac eros at pellentesque. Curabitur suscipit sagittis urna, et congue mi faucibus in. Nulla nulla lectus, fringilla vitae auctor in, dignissim et nisl. Nullam vitae nulla a velit consequat porta vitae non magna. Vivamus efficitur, nibh nec aliquet pretium, sapien turpis ultrices lacus, sit amet viverra justo eros id turpis. Duis interdum, felis nec gravida dapibus, augue ante vestibulum dui, a venenatis nunc velit ac ex. Vestibulum eget elit a tellus mollis vehicula. Nunc vulputate, lorem id rhoncus tristique, nunc justo placerat sem, non congue dui tellus non ipsum. Donec ut finibus ligula, vel condimentum enim.
 
@@ -16,7 +16,7 @@ Vivamus efficitur, nibh nec aliquet pretium, sapien turpis ultrices lacus, sit a
 Duis interdum, felis nec gravida dapibus, augue ante vestibulum dui, a venenatis nunc velit ac ex.
 ```
 
-<div class="msg warn"> <p><strong>Phasellus dapibus condimentum vehicula. Nulla accumsan enim sed finibus pretium. Integer vulputate pharetra sapien, et finibus mauris pellentesque dapibus. In hendrerit, augue dictum aliquet auctor, tortor justo tempor neque, eu porttitor elit orci at mauris. Aenean laoreet massa nisi, nec bibendum diam varius vitae. </p> </div>
+<div class="msg warn"> <p><strong>Phasellus dapibus condimentum vehicula</strong>. Nulla accumsan enim sed finibus pretium. Integer vulputate pharetra sapien, et finibus mauris pellentesque dapibus. In hendrerit, augue dictum aliquet auctor, tortor justo tempor neque, eu porttitor elit orci at mauris. Aenean laoreet massa nisi, nec bibendum diam varius vitae. </p> </div>
 
 
 <a name="getting-started"></a>
