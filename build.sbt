@@ -12,7 +12,7 @@ micrositeBaseUrl := "dummy-sbt-microsite"
 micrositeGithubOwner := "47deg"
 micrositeGithubRepo := "dummy-sbt-microsite"
 
-micrositeExtratMdFiles := Map(file("CONSEQUAT.md") -> "consequat.md")
+micrositeExtraMdFiles := Map(file("CONSEQUAT.md") -> "consequat.md")
 micrositePalette := Map(
   "brand-primary"     -> "#FC4053",
   "brand-secondary"   -> "#B92239",
