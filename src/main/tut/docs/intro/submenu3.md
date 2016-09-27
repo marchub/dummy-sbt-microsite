@@ -1,6 +1,7 @@
 ---
 layout: docs
 title:  "Submenu 3"
+section: "intro"
 ---
 
 # Submenu 3

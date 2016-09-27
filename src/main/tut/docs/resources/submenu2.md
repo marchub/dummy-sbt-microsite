@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "Submenu 2"
-section: "intro"
+section: "res"
 ---
 
 # Submenu 2
