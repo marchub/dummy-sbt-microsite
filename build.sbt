@@ -6,7 +6,8 @@ crossScalaVersions := Seq("2.10.6", "2.11.8")
 micrositeName := "Microsite Demo"
 micrositeDescription := "How to use the sbt-microsites plugin"
 micrositeHighlightTheme := "atom-one-light"
-micrositeDocumentationUrl := "/dummy-sbt-microsite/docs/0_introduction.html"
+micrositeDocumentationUrl := "/dummy-sbt-microsite/docs/"
+micrositeDataDirectory := (resourceDirectory in Compile).value / "microsite" / "data"
 micrositeBaseUrl := "dummy-sbt-microsite"
 
 micrositeGithubOwner := "47deg"

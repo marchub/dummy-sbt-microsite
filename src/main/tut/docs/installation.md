@@ -1,10 +1,9 @@
 ---
 layout: docs
-title:  "Introduction"
-section: "docs"
+title:  "Installation"
 ---
 
-# Introduction
+# Installation
 
 Maecenas euismod, ex a mattis ultricies, libero est pulvinar lectus, quis mattis dui turpis id elit. Phasellus vestibulum purus semper, aliquam leo non, pellentesque purus. Donec bibendum felis a accumsan tempus. Phasellus dictum est metus, vitae placerat nulla feugiat vitae. Sed sollicitudin libero arcu, non sollicitudin risus ornare at. Cras id leo interdum, laoreet justo a, condimentum dolor. Donec mollis ultrices quam. Quisque volutpat velit tellus, vitae tincidunt enim efficitur vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
@@ -15,3 +14,19 @@ Aenean vitae dignissim sapien. Sed dolor felis, ultricies ornare nisi vitae, viv
 ```scala
 addSbtPlugin("com.fortysevendeg"  % "sbt-microsites" % "0.1.0")
 ```
+
+# Resources
+
+- [Code](https://github.com/47deg/sbt-microsites) on GitHub.
+- [Documentation site](http://47deg.github.io/sbt-microsite/)
+
+# Acknowledgements
+
+* [tut-plugin](https://github.com/tpolecat/tut)
+* [sbt-site](https://github.com/sbt/sbt-site)
+* [sbt-ghpages](https://github.com/sbt/sbt-ghpages)
+* [scalatags](https://github.com/lihaoyi/scalatags)
+* [sbt-native-packager](https://github.com/sbt/sbt-native-packager)
+* [sbt-scalafmt](https://github.com/olafurpg/scalafmt)
+* [sbt-pgp](https://github.com/sbt/sbt-pgp)
+* [sbt-header](https://github.com/sbt/sbt-header)

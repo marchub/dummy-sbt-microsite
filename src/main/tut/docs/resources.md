@@ -1,7 +1,6 @@
 ---
 layout: docs
 title:  "Resources"
-section: "docs"
 ---
 
 # Resources
