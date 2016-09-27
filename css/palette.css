@@ -25,9 +25,6 @@
       background: #FFFFFF;
       color: #B92239; }
 
-@media screen and (max-width: 768px) {
-  .navbar-collapse {
-    background: #8C192F; } }
 pre {
   background: rgba(246, 246, 246, 0.6); }
   pre code {
@@ -56,7 +53,8 @@ body.docs {
 .sidebar-nav > li a:hover {
   background: #8C192F; }
 .sidebar-nav > li a.active {
-  border-left: 3px solid #FC4053; }
+  border-left: 3px solid #FC4053;
+  color: #fff; }
 .sidebar-nav > .sidebar-brand a {
   background: #8C192F; }
   .sidebar-nav > .sidebar-brand a:hover {

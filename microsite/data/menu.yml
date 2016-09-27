@@ -1,0 +1,17 @@
+options:
+  - title: Introduction
+    url: index.html
+
+    nested_options:
+     - title: Submenu 1
+       url: intro/submenu1.html
+     - title: Submenu 2
+       url: intro/submenu2.html
+     - title: Submenu 3
+       url: intro/submenu3.html
+
+  - title: Installation
+    url: installation.html
+
+  - title: Resources
+    url: resources.html
