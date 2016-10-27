@@ -26,4 +26,6 @@ micrositePalette := Map(
 
 autoAPIMappings := true
 
+com.typesafe.sbt.SbtGhPages.GhPagesKeys.ghpagesNoJekyll := false
+
 enablePlugins(MicrositesPlugin)

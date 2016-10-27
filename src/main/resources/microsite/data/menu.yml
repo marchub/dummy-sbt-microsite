@@ -1,25 +1,25 @@
 options:
   - title: Introduction
-    url: index.html
+    url: docs/index.html
     section: intro
 
     nested_options:
      - title: Submenu 1
-       url: intro/submenu1.html
+       url: docs/intro/submenu1.html
      - title: Submenu 2
-       url: intro/submenu2.html
+       url: docs/intro/submenu2.html
      - title: Submenu 3
-       url: intro/submenu3.html
+       url: docs/intro/submenu3.html
 
   - title: Installation
-    url: installation.html
+    url: docs/installation.html
 
   - title: Resources
-    url: resources.html
+    url: docs/resources.html
     section: res
 
     nested_options:
      - title: Submenu 1
-       url: resources/submenu1.html
+       url: docs/resources/submenu1.html
      - title: Submenu 2
-       url: resources/submenu2.html
+       url: docs/resources/submenu2.html

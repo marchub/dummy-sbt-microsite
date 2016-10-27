@@ -15,6 +15,16 @@ Aenean vitae dignissim sapien. Sed dolor felis, ultricies ornare nisi vitae, viv
 addSbtPlugin("com.fortysevendeg"  % "sbt-microsites" % "0.1.0")
 ```
 
+```tut:silent
+def yourmethod(r: Int): Unit = {
+    // This is just a comment with some keywords, like if
+    println("hey!")
+    val b = r + 1
+    println(s"Another comment $b")
+    ()
+  }
+```
+
 # Resources
 
 - [Code](https://github.com/47deg/sbt-microsites) on GitHub.
